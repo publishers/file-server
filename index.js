@@ -14,6 +14,12 @@ if (baseDir !== undefined) {
         response.sendFile(baseDir + '\\' + dir + '\\' + filename)
     });
 
+    app.get('/video/:dir/css/:filename', (request, response) => {
+        let dir = request.params['dir'];
+        let filename = request.params['filename'];
+        response.sendFile(baseDir + '\\' + dir + '\\css\\'+ filename)
+    });
+
     app.get('/video/:dir', (request, response) => {
         let dir = request.params['dir'];
         response.redirect('/video/' + dir + '/index.html')
